@@ -1,5 +1,5 @@
 {
-  "name": "restserver",
+  "name": "urestserver",
   "version": "1.0.0",
   "description": "REST API Server",
   "main": "index.js",
