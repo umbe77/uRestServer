@@ -1,3 +1,4 @@
 .vscode
 restserver*.tgz
 .npmignore
+test
