@@ -14,7 +14,6 @@
   "author": "Roberto Ughi",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^3.19.0",
     "mocha": "^5.2.0"
   }
 }
