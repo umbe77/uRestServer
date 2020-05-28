@@ -14,6 +14,6 @@
   "author": "Roberto Ughi",
   "license": "MIT",
   "devDependencies": {
-    "mocha": "^5.2.0"
+    "mocha": "^7.2.0"
   }
 }
