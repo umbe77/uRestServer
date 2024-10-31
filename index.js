@@ -1,1 +1,2 @@
-module.exports = require("./lib/urestserver");
+import { uRestserver } from "./lib/urestserver.js"
+export { uRestserver }
