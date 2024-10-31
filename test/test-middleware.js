@@ -1,4 +1,4 @@
-const {rest, router} = require('../index')
+import {rest, router} from '../index.js'
 
 rest.createRest({
     port: 8088

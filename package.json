@@ -13,8 +13,5 @@
         "WebApi"
     ],
     "author": "Roberto Ughi",
-    "license": "MIT",
-    "dependencies": {
-        "mocha": "^10.8.2"
-    }
+    "license": "MIT"
 }
