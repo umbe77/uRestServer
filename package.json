@@ -2,8 +2,9 @@
     "name": "urestserver",
     "version": "3.0.0",
     "description": "REST API Server",
-    "main": "index.mjs",
+    "main": "index.js",
     "type": "module",
+    "types": "types/index.d.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },

@@ -1,4 +1,4 @@
-import { uRestserver } from "../index.mjs";
+import uRestserver from "../index.js";
 
 const app = uRestserver();
 
@@ -8,7 +8,7 @@ app.use((req, res) => {
     res.next();
 });
 
-app.get("/ping", (_, res) => {
+app.get("/ping", (_req, res) => {
     res.send(
         JSON.stringify({
             message: "Pong",
@@ -25,8 +25,8 @@ app.post("/customer", (req, res) => {
     );
 });
 
-app.get("/timeout", async (_, res) => {
-    return await new Promise((resolve, _) => {
+app.get("/timeout", async (_req, res) => {
+    return await new Promise((resolve, _reject) => {
         setTimeout(() => {
             res.send(
                 JSON.stringify({
@@ -37,5 +37,14 @@ app.get("/timeout", async (_, res) => {
         }, 2000);
     });
 });
+
+app.post("/add", (req, res) => {
+    const { method, endPoint } = req.body
+
+    app.addService(method, endPoint, (req, res) => {
+        res.send(JSON.stringify(req.body))
+    })
+    res.send(JSON.stringify({message: "OK"}))
+})
 
 app.listen(8180);
