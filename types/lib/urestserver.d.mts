@@ -1,15 +1,21 @@
 import { IncomingMessage } from "node:http"
+
+interface Headers {
+    [Key: string]: string;
+}
+
 interface Response {
-    status: number
-    headers: any
-    send(message: string): void
+    status: number;
+    headers: Headers;
+    send(message: string): void;
 }
 
 type Handler = (req: IncomingMessage, res: Response) => void
+
 interface URServer {
-    listen(port: number, hostname: String): void
-    use(middleware: any): void;
-    addService(method: string, path: string, handler: Handler): void;
+    listen(port: number, hostname: string): void;
+    use(middleware: Handler): void;
+    addService(method: string, path: string, handler: (req: IncomingMessage, res: Response) => void): void;
     removeService(method: string, path: string): void;
     get(path: string, handler: (req: IncomingMessage, res: Response) => void): void;
     post(path: string, handler: (req: IncomingMessage, res: Response) => void): void;
