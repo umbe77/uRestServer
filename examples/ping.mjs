@@ -16,6 +16,12 @@ app.get("/ping", (_req, res) => {
     );
 });
 
+app.get("/jsonres", (_req, res) => {
+    res.json({
+        hello: "MONDO!!!"
+    });
+});
+
 app.post("/customer", (req, res) => {
     const { companyName } = req.body;
     res.send(
