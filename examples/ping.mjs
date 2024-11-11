@@ -17,9 +17,16 @@ app.get("/ping", (_req, res) => {
 });
 
 app.get("/jsonres", (_req, res) => {
+    res.headers["X-Custom"] = "TEST"
     res.json({
         hello: "MONDO!!!"
     });
+});
+
+app.get("/bad", (_req, res) => {
+    res.status = 500
+    res.headers["text-plain"]
+    res.send('')
 });
 
 app.post("/customer", (req, res) => {
