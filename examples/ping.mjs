@@ -8,6 +8,11 @@ app.use((req, res) => {
     res.next();
 });
 
+app.get("json/:message", (req, res) => {
+    const msg = req.params.message
+    res.json({ msg })
+})
+
 app.get("/ping", (_req, res) => {
     res.send(
         JSON.stringify({
@@ -57,7 +62,7 @@ app.post("/add", (req, res) => {
     app.addService(method, endPoint, (req, res) => {
         res.send(JSON.stringify(req.body))
     })
-    res.send(JSON.stringify({message: "OK"}))
+    res.send(JSON.stringify({ message: "OK" }))
 })
 
 app.listen(8180);
