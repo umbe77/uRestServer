@@ -8,6 +8,9 @@ app.use((req, res) => {
     res.next();
 });
 
+app.get("api/services", (_req, res) => {
+    res.json(app.listServives())
+})
 app.get("json/:message", (req, res) => {
     const msg = req.params.message
     res.json({ msg })
