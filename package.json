@@ -1,10 +1,14 @@
 {
     "name": "urestserver",
-    "version": "3.0.1",
+    "version": "3.0.2",
     "description": "REST API Server",
     "main": "index.js",
     "type": "module",
     "types": "types/index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/umbe77/uRestServer.git"
+    },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
