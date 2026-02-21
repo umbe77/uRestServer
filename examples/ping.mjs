@@ -1,4 +1,5 @@
 import uRestserver from "../index.js";
+import fs from "node:fs";
 
 const app = uRestserver();
 
@@ -66,6 +67,12 @@ app.post("/add", (req, res) => {
         res.send(JSON.stringify(req.body))
     })
     res.send(JSON.stringify({ message: "OK" }))
+})
+
+app.get("/file", (req, res) => {
+    const stream = fs.createReadStream("./examples/ping.mjs")
+    res.headers["Content-Disposition"] = "attachment; filename=\"pippo.txt\""
+    res.pipeStream(stream)
 })
 
 app.listen(8180);
