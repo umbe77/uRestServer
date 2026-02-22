@@ -9,7 +9,7 @@ interface Response {
     headers: Headers;
     send(message: string): void;
     json(message: object): void;
-    pipStream(stream: Readable): void
+    pipeStream(stream: Readable): void
 }
 
 interface MidwareResponse extends Response {
