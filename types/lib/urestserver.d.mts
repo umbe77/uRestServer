@@ -28,7 +28,7 @@ interface URServer {
     post(path: string, handler: (req: IncomingMessage, res: Response) => void): void;
     put(path: string, handler: (req: IncomingMessage, res: Response) => void): void;
     delete(path: string, handler: (req: IncomingMessage, res: Response) => void): void;
-    optoin(path: string, handler: (req: IncomingMessage, res: Response) => void): void;
+    option(path: string, handler: (req: IncomingMessage, res: Response) => void): void;
     head(path: string, handler: (req: IncomingMessage, res: Response) => void): void;
 }
 
